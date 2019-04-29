@@ -31,7 +31,7 @@ jobs:
             - "./deploy/node_modules"
 
       - save_cache:
-          key: project-cache-{{ .BuildNum }}
+          key: project-cache-{{ .Revision }}
           paths:
             - "./dist"
 
@@ -48,7 +48,7 @@ jobs:
 
       - checkout
       - restore_cache:
-          key: project-cache-{{ .BuildNum }}
+          key: project-cache-{{ .Revision }}
 
       - run: cd deployment && yarn install
       - run: cd deployment && yarn deploy
