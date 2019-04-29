@@ -74,6 +74,10 @@ export default function Container ({ type: defType, debt: defDebt, interest: def
 
   return (
     <div className='app_container'>
+      <h1 className='title'>
+        <i className='fas fa-calculator mr-1' />
+        リボ払い・消費者金融・カードローンシミュレーター (概算)
+      </h1>
       <form onSubmit={submit}>
         <div className='form_container'>
           <Tabs />
