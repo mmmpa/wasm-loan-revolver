@@ -78,7 +78,7 @@ export default function Container ({ type: defType, debt: defDebt, interest: def
         <i className='fas fa-calculator mr-1' />
         リボ払い・消費者金融・カードローンシミュレーター (概算)
       </h1>
-      <form onSubmit={submit}>
+      <form className='form' onSubmit={submit}>
         <div className='form_container'>
           <Tabs />
           <div className='inputs'>
@@ -118,6 +118,12 @@ export default function Container ({ type: defType, debt: defDebt, interest: def
       </div>
       <div className='result_container'>
         <ResultTable value={result} params={params} />
+      </div>
+      <div className='footer'>
+        <a href='https://github.com/mmmpa'>
+          <i className='fab fa-github mr-1' />
+          mmmpa
+        </a>
       </div>
     </div>
   );

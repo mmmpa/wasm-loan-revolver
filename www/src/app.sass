@@ -4,8 +4,16 @@ $box-bg: #fff
 $border-color: $gray-200
 $table-stripe-bg: $gray-100
 
-body
+body,
+html
   font-family: 'Roboto', "M PLUS Rounded 1c", sans-serif
+  height: 100%
+
+#app
+  height: 100%
+
+.form
+  flex: 1 0
 
 .fa,
 .far,
@@ -22,9 +30,12 @@ input[type="number"]
   font-size: 2em
 
 .app_container
+  box-sizing: border-box
   width: 600px
   margin: 0 auto
-  @extend .pt-4, .pb-4
+  display: flex
+  flex-direction: column
+  height: 100%
 
 .inputs
   @extend .pt-4, .pr-2, .pb-4, .pl-2
@@ -136,7 +147,12 @@ input[type="number"]
   color: #fff
 
 .title
-  @extend .mb-4
+  @extend .pt-4, .pb-4
+  font-size: 1.2em
+  text-align: center
+
+.footer
+  @extend .pt-4, .pb-4
   font-size: 1.2em
   text-align: center
 
