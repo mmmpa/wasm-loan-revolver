@@ -1,0 +1,247 @@
+@import "primer/index.scss"
+
+$box-bg: #fff
+$border-color: $gray-200
+$table-stripe-bg: $gray-100
+
+body
+  font-family: 'Roboto', "M PLUS Rounded 1c", sans-serif
+
+.fa,
+.far,
+.fas
+  font-family: "Font Awesome 5 Free" !important
+
+thead
+  background: $gray-100
+
+input[type="number"]
+  @extend .form-control
+  text-align: right
+  width: 100%
+  font-size: 2em
+
+.app_container
+  width: 600px
+  margin: 0 auto
+  @extend .pt-4, .pb-4
+
+.inputs
+  @extend .pt-4, .pr-2, .pb-4, .pl-2
+  box-sizing: border-box
+  width: 100%
+  display: flex
+
+  &__item
+    @extend .pr-2, .pl-2
+    flex: 0 1 100%
+
+    &__input
+      @extend .mt-1
+      white-space: nowrap
+      display: flex
+
+      &__unit
+        @extend .pl-1
+        align-self: center
+
+.form_container
+  border: 1px solid $border-color
+  border-radius: 3px
+  overflow: hidden
+  background: $box-bg
+
+
+.tabs
+  display: flex
+  background: $border-color
+  margin-bottom: -1px
+  position: relative
+  z-index: 100
+
+  @mixin tab__item_base
+    @extend .pt-2, .pr-2, .pb-2, .pl-2
+    flex: 0 0 50%
+    background: none
+    border: none
+
+  &__item
+    @include tab__item_base
+
+    &--active
+      @include tab__item_base
+      background: $box-bg
+      border-radius: 3px 3px 0 0
+
+.error-message
+  border-radius: 3px
+  @extend .mt-4, .mb-4, .mr-4, .ml-4, .pt-3, .pr-4, .pb-3, .pl-4
+  background: $red-100
+  color: $red
+  text-align: center
+  font-weight: bold
+
+.delim
+  letter-spacing: 0
+
+.message
+  &_container
+    @extend .mt-4, .pt-4, .pr-4, .pb-4, .pl-4
+    margin-bottom: -1px
+    border: 1px solid $border-color
+    border-radius: 3px 3px 0 0
+
+  &__per_month
+    font-size: 1.5rem
+
+  &__times
+    font-size: 1.5rem
+
+  &__months
+    font-size: 1.5rem
+    color: $blue
+
+  &__amount
+    font-size: 1.5rem
+    color: $blue
+
+  &__interest
+    font-size: 2rem
+    color: $red
+
+  &__total_amount
+    font-size: 2rem
+    color: $red
+
+  &__debt
+    font-size: 1.5rem
+
+.def_button
+  position: relative
+  display: inline-block
+  padding: 6px 12px
+  font-size: 14px
+  font-weight: 600
+  line-height: 20px
+  white-space: nowrap
+  vertical-align: middle
+  cursor: pointer
+  user-select: none
+  background-repeat: repeat-x
+  background-position: -1px -1px
+  background-size: 110% 110%
+  border: 1px solid rgba(27, 31, 35, 0.2)
+  border-radius: 0.25em
+  appearance: none
+  color: #fff
+
+.total_result
+  box-sizing: border-box
+  margin: -1px
+  width: 600px
+  border: 1px solid $border-color
+  border-collapse: collapse
+
+  td,
+  th
+    vertical-align: bottom
+    border: 1px solid $border-color
+    @extend .pt-2, .pr-2, .pb-2, .pl-2
+
+.repayments
+  border: 1px solid $border-color
+  border-radius: 0 0 3px 3px
+  overflow: hidden
+
+  &__table
+    box-sizing: border-box
+    margin: -1px
+    width: 600px
+    border: 1px solid $border-color
+    border-collapse: collapse
+
+  td,
+  th
+    text-align: center
+    vertical-align: middle
+
+  &__row
+    &:nth-child(2n)
+      background: $table-stripe-bg
+
+    td
+      text-align: right
+
+  &__turn,
+  &__amount,
+  &__principal,
+  &__interest,
+  &__rest,
+  &__next_interest
+    border: 1px solid $border-color
+    @extend .pt-2, .pr-2, .pb-2, .pl-2
+
+  &__turn,
+  &__principal,
+  &__interest
+    width: 1px
+    white-space: nowrap
+
+  &__amount
+    border-right: none
+    padding-right: 0 !important
+
+  &__principal
+    border-left: none
+    border-right: none
+    padding-left: 0 !important
+    padding-right: 0 !important
+
+    &__amount
+      font-weight: bold
+      color: $blue
+
+  &__interest
+    border-left: none
+    padding-left: 0 !important
+
+    &__amount
+      font-weight: bold
+      color: $red
+
+  &__next_interest
+    &__amount
+      font-weight: bold
+      color: $red
+      font-size: 1.2rem
+
+  &__next_rest
+    &__amount
+      font-weight: bold
+      font-size: 1.2rem
+
+.button_area
+  @extend .mb-4
+  text-align: center
+
+.load_button
+  @extend .def_button
+  background: $blue
+
+  &:hover
+    background: $blue
+
+  &.disabled
+    @extend .btn:disabled
+    pointer-events: none
+
+.start_button
+  @extend .def_button
+  background: $green
+
+  &:hover
+    background: $green
+
+  &:disabled
+    pointer-events: none
+
