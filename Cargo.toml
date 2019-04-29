@@ -11,7 +11,7 @@ crate-type = ["cdylib", "rlib"]
 default = ["console_error_panic_hook"]
 
 [dependencies]
-loan_revolver = { version = "0.1.0", path = "../loan_revolver" }
+loan_revolver = { version = "0.1.0", git = "https://github.com/mmmpa/loan_revolver" }
 js-sys = "0.3.17"
 serde = "^1.0.59"
 serde_derive = "^1.0.59"
